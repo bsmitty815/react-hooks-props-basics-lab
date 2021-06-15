@@ -1,12 +1,16 @@
 import React from "react";
+import Links from "./links";
 
-function About() {
+function About(props) {
+
   return (
     <div id="about">
       <h2>About Me</h2>
-      <p>Put the bio in here</p>
+      { props.bio ? <p id="pTag">{ props.bio }</p> : null }
+      {/* ternary - you can use ternary instead of an if else statement
+      and to make javascript inside the return we open up curly brackets*/}
       <img src="https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
-      {/* add your <Links /> component here */}
+      <Links github={props.links.github} linkedin={props.links.linkedin} />
     </div>
   );
 }
